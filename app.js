@@ -140,6 +140,7 @@ app.get('/api/organization', (req, res) => {
 })
 
 app.get('/sse/channel', (req, res) => {
+  console.log('channel')
   req.socket.setNoDelay(true)
   req.socket.setKeepAlive(true)
   req.socket.setTimeout(0)
@@ -155,14 +156,16 @@ app.get('/sse/channel', (req, res) => {
   const ping = setInterval(() => {
     res.write('\n\n')
   }, 45 * 1000)
-
+  console.log('channel2')
   const samplePush = (event, data) => {
+    console.log('channel push')
     res.write('event: ' + String(event) + '\n' + 'data: ' + JSON.stringify(data) + '\n\n')
   }
 
   sse.on('sample_event', samplePush)
 
   req.on('close', () => {
+    console.log('channel close')
     sse.removeListener('sample_event', samplePush)
     clearInterval(ping)
     res.end()
@@ -231,7 +234,7 @@ async function addNewParticipant(eventData) {
         let rawdata = documentSnapshot.data()
         // console.log(`Retrieved data: ${JSON.stringify(data)}`)
         const data = JSON.stringify(rawdata)
-        // console.log('new participants:', participants)
+        console.log('new participants:', rawdata.participants, eventData.user)
         documentRef.update({
           participants: [...rawdata.participants.filter(e => e.slug !== eventData.user.slug), eventData.user]
         })
@@ -447,12 +450,27 @@ async function getEventController(res) {
   const retObj = objs.map(obj => {
     const field = obj._fieldsProto
     return {
-      participants: field.participants.arrayValue.values,
+      participants: field.participants.arrayValue.values.map(e => {
+        const fields = e.mapValue.fields
+        // console.log(e)
+        return {
+          slug: fields.slug.stringValue,
+          scores: fields.scores.arrayValue.values.map(v => {
+            // console.log(v)
+            const fields2 = v.mapValue.fields
+            return {
+              attempt: parseInt(fields2.attempt.integerValue),
+              routeSlug: fields2.routeSlug.stringValue,
+              score: parseInt(fields2.score.integerValue)
+            }
+          })
+        }
+      }),
       slug: field.slug.stringValue,
       name: field.name.stringValue,
       dateStart: field.dateStart.stringValue,
       dateEnd: field.dateEnd.stringValue,
-      routes: field.participants.arrayValue.values
+      routes: field.routes.arrayValue.values.map(e => e.stringValue)
     }
   })
   console.log(retObj)
