@@ -452,9 +452,9 @@ async function getEventController(res) {
     return {
       participants: field.participants.arrayValue.values.map(e => {
         const fields = e.mapValue.fields
-        // console.log(e)
+        console.log(fields.slug)
         return {
-          slug: fields.slug.stringValue,
+          slug: fields.slug[field.slug.valueType],
           scores: fields.scores.arrayValue.values.map(v => {
             // console.log(v)
             const fields2 = v.mapValue.fields
