@@ -1,0 +1,9 @@
+<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18.3935" cy="18.099" r="18.099" fill="black"/>
+<rect x="14.3936" y="19.1443" width="2" height="6" rx="1" transform="rotate(90 14.3936 19.1443)" fill="white"/>
+<rect x="21.3936" y="14.6133" width="2" height="6" rx="1" transform="rotate(90 21.3936 14.6133)" fill="white"/>
+<rect x="28.3936" y="19.1443" width="2" height="6" rx="1" transform="rotate(90 28.3936 19.1443)" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.3936 9.01562H26.3936V17.1442H24.3936V9.01562ZM24.3936 19.1442H26.3936V21.1442H24.3936V19.1442ZM24.3936 23.1442V26.9496H26.3936V23.1442H24.3936Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3936 8.99109H12.3936V17.1442H10.3936V8.99109ZM10.3936 19.1442V21.1442H12.3936V19.1442H10.3936ZM10.3936 23.1442H12.3936V26.9805H10.3936V23.1442Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.3936 8.9884H17.3936V12.605L19.3936 12.605V8.9884ZM17.3936 26.9985V18.6277H19.3936V26.9985H17.3936Z" fill="white"/>
+</svg>

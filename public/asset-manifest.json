@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9857451a.chunk.css",
+    "main.js": "/static/js/main.e795cc7f.chunk.js",
+    "main.js.map": "/static/js/main.e795cc7f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.196e25c3.js",
+    "runtime~main.js.map": "/static/js/runtime~main.196e25c3.js.map",
+    "static/js/2.f635d390.chunk.js": "/static/js/2.f635d390.chunk.js",
+    "static/js/2.f635d390.chunk.js.map": "/static/js/2.f635d390.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.89d198ca532f121c2963d5a96bdf60ac.js": "/precache-manifest.89d198ca532f121c2963d5a96bdf60ac.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9857451a.chunk.css.map": "/static/css/main.9857451a.chunk.css.map",
+    "static/media/SettingsButton.a731252a.svg": "/static/media/SettingsButton.a731252a.svg",
+    "static/media/ShoppingCart.module.scss": "/static/media/close_black.ca1ff322.svg",
+    "static/media/ico-close-24.cfd8a81c.svg": "/static/media/ico-close-24.cfd8a81c.svg"
+  }
+}
